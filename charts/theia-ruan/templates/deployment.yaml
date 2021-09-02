@@ -47,7 +47,7 @@ spec:
           {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          {{- if .Values.configMap.enabled }}
+          {{- if .Values.configMap.created }}
           volumeMounts:
           - mountPath: {{ .Values.configMap.path }}
             name: {{ .Values.configMap.name }}
@@ -64,7 +64,7 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      {{- if .Values.configMap.enabled }}
+      {{- if .Values.configMap.created }}
       volumes:
       - configMap:
           defaultMode: 509
