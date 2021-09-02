@@ -90,3 +90,11 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+configMap:
+  created: true
+  name: config
+  path: /home/project/config
+  data: 
+    teste-arquivo: |-
+       Esse é o arquivo
